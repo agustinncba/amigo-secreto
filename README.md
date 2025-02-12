@@ -2,6 +2,8 @@
 
 Sortea un amigo secreto de una lista de nombres.
 
+Abre [este enlace](https://agustinncba.github.io/amigo-secreto/) en tu navegador para ver la aplicación en funcionamiento.
+
 ## Funcionalidades
 
 *   **Añadir Amigos:** Ingresa nombres y agrégalos a la lista.
@@ -26,7 +28,3 @@ Sortea un amigo secreto de una lista de nombres.
 *   `style.css`: Estilos visuales.
 *   `app.js`: Lógica del programa.
 *   `assets/`: Contiene las imágenes.
-content_copy
-download
-Use code with caution.
-Markdown
