@@ -2,6 +2,20 @@
 let amigos = [];
 
 /**
+ * Funcion para validar solo el ingreso de letras en el input.
+ */
+function validarLetras(string) {
+  const regex = /^[A-Za-z\s]+$/;
+  if (regex.test(string)) {
+    resultado.innerHTML = "";
+    return true;
+  }
+  resultado.innerHTML =
+    "<h6 style='color:white; background-color:red; padding:5px; border-radius:5px'>¡Solo se permiten letras!</h6>";
+  return false;
+}
+
+/**
  * Funcion para agregar amigos en un array, si no se ingreso ningun nombre
  * devolvera un mensaje de alerta.
  */
@@ -9,13 +23,25 @@ function agregarAmigo() {
   let amigo = document.getElementById("amigo").value;
 
   if (amigo.length === 0) {
-    alert("Porfavor ingrese un amigo");
-  } else {
+    alert("Porfavor, ingrese un nombre!");
+  } else if (validarLetras(amigo) && validarAmigo(amigo) === false) {
     amigos.push(amigo);
     document.getElementById("amigo").value = "";
     imprimirAmigos();
   }
-  console.log(amigos);
+}
+
+/**
+ * Validar si el nombre ingresado ya se encuentra en la lista.
+ */
+function validarAmigo(amigo) {
+  for (let i = 0; i < amigos.length; i++) {
+    if (amigo === amigos[i]) {
+      alert("El nombre ingresado ya se encuentra en la lista");
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
@@ -41,8 +67,11 @@ function sortearAmigo() {
   let numeroAletorio = Math.floor(Math.random() * amigos.length);
 
   if (amigos.length === 0) {
-    alert("No hay ningun amigos en la lista");
+    alert("No hay ningun amigo en la lista");
   } else {
-    resultado.innerHTML = "<h1>" + amigos[numeroAletorio] + "</h1>";
+    resultado.innerHTML =
+      "<h4 style='color:white; background-color:green; padding:5px; border-radius:5px'>El amigo secreto es: " +
+      amigos[numeroAletorio] +
+      "</h4>";
   }
 }
