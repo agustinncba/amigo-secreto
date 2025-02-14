@@ -12,6 +12,7 @@ function validarLetras(string) {
   }
   resultado.innerHTML =
     "<h6 style='color:white; background-color:red; padding:5px; border-radius:5px'>¡Solo se permiten letras!</h6>";
+    document.getElementById("amigo").value = "";
   return false;
 }
 
@@ -36,8 +37,9 @@ function agregarAmigo() {
  */
 function validarAmigo(amigo) {
   for (let i = 0; i < amigos.length; i++) {
-    if (amigo === amigos[i]) {
+    if (amigo.toUpperCase() === amigos[i].toUpperCase()) {
       alert("El nombre ingresado ya se encuentra en la lista");
+      document.getElementById("amigo").value = "";
       return true;
     }
   }
@@ -53,9 +55,24 @@ function imprimirAmigos() {
   listaAmigos.innerHTML = "";
 
   for (let i = 0; i < amigos.length; i++) {
-    listaAmigos.innerHTML += "<li>" + amigos[i] + "</li>";
+    listaAmigos.innerHTML += `<li id='${[i]}'> ${amigos[i]} </li>`;
   }
 }
+
+
+/**
+ * Funcion para la eliminar de la lista un amigo.
+ */
+function eliminarAmigo() {
+  let nombres = document.getElementById("listaAmigos");
+  nombres.addEventListener("click", (e) => {
+    amigos.splice(e.target.id, 1);
+    imprimirAmigos();
+    console.log(amigos);
+  });
+}
+eliminarAmigo();
+
 
 /**
  * Funcion para sortear el amigo secreto.
