@@ -16,7 +16,7 @@ Sortea un amigo secreto de una lista de nombres.
 
 ## Uso
 
-1.  Abre [este enlace](https://agustinncba.github.io/amigo-secreto/) en tu navegador para ver la aplicación en funcionamiento.
+1.  Abre `index.html` en tu navegador.
 2.  Ingresa nombres y haz clic en "Añadir".
 3.  Haz clic en "Sortear amigo" para ver el resultado.
 
