@@ -6,7 +6,9 @@ Sortea un amigo secreto de una lista de nombres.
 
 *   **Añadir Amigos:** Ingresa nombres y agrégalos a la lista.
 *   **Lista de Amigos:** Muestra los nombres añadidos.
+*   **Eliminar Amigo:** Elimina un amigo haciendo click en el nombre.
 *   **Sortear:** Elige un amigo al azar de la lista.
+*   **Validar:**  Asegura que solo se ingresen letras y no se repitan nombres.
 
 ## Tecnologías
 
@@ -26,3 +28,8 @@ Sortea un amigo secreto de una lista de nombres.
 *   `style.css`: Estilos visuales.
 *   `app.js`: Lógica del programa.
 *   `assets/`: Contiene las imágenes.
+
+## Capturas
+
+![Vista previa](/assets/captura1.png)
+![Vista previa](/assets/captura2.png)
