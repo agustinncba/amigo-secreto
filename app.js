@@ -2,6 +2,19 @@
 let amigos = [];
 
 /**
+ * Funcion para agregar amigos con la tecla enter
+ */
+function enterKey() {
+  let input = document.getElementById("amigo");
+  input.addEventListener("keyup", (e) => {
+    if (e.key === "Enter" && input.value.length > 0) {
+      agregarAmigo();
+    }
+  })
+}
+enterKey();
+
+/**
  * Funcion para validar solo el ingreso de letras en el input.
  */
 function validarLetras(string) {
