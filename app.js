@@ -2,10 +2,23 @@
 let amigos = [];
 
 /**
+ * Funcion para agregar amigos con la tecla enter.
+ */
+function enterKey() {
+  let input = document.getElementById("amigo");
+  input.addEventListener("keyup", (e) => {
+    if (e.key === "Enter" && input.value.length > 0) {
+      agregarAmigo();
+    }
+  });
+}
+enterKey();
+
+/**
  * Funcion para validar solo el ingreso de letras en el input.
  */
 function validarLetras(string) {
-  const regex = /^[A-Za-z\s]+$/;
+  const regex = /^[A-Za-z][A-Za-z\s]*$/;
   if (regex.test(string)) {
     resultado.innerHTML = "";
     return true;
@@ -59,7 +72,6 @@ function imprimirAmigos() {
   }
 }
 
-
 /**
  * Funcion para la eliminar de la lista un amigo.
  */
@@ -72,7 +84,6 @@ function eliminarAmigo() {
   });
 }
 eliminarAmigo();
-
 
 /**
  * Funcion para sortear el amigo secreto.
