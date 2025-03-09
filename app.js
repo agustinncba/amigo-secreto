@@ -6,8 +6,8 @@ let amigos = [];
  */
 function enterKey() {
   let input = document.getElementById("amigo");
-  input.addEventListener("keyup", (e) => {
-    if (e.key === "Enter" && input.value.length > 0) {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
       agregarAmigo();
     }
   });
